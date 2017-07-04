@@ -10,6 +10,7 @@ namespace TBSF.Refdata.Entities.Concrete
         public int RefId { get; set; }
         public DateTime RefStartDate { get; set; }
         public int CityId  { get; set; }
+        public int RegionId { get; set; }
 
 
     }
