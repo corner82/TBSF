@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBSF.Core", "TBSF.Core\TBSF.Core.csproj", "{C87E1EE5-FCC9-4CE7-8453-B00A9CD21000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBSF.Core", "TBSF.Core\TBSF.Core.csproj", "{C87E1EE5-FCC9-4CE7-8453-B00A9CD21000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBSF.Refdata.Entities", "TBSF.Refdata.Entities\TBSF.Refdata.Entities.csproj", "{32A43EE3-A86A-4F3A-A1F2-E5B2C9302C6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBSF.Refdata.Entities", "TBSF.Refdata.Entities\TBSF.Refdata.Entities.csproj", "{32A43EE3-A86A-4F3A-A1F2-E5B2C9302C6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBSF.Refdata.DataAccess", "TBSF.Refdata.DataAccess\TBSF.Refdata.DataAccess.csproj", "{516F5F60-720F-4D02-9085-8D98AF362C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBSF.Refdata.DataAccess", "TBSF.Refdata.DataAccess\TBSF.Refdata.DataAccess.csproj", "{516F5F60-720F-4D02-9085-8D98AF362C67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBSF.Refdata.Business", "TBSF.Refdata.Business\TBSF.Refdata.Business.csproj", "{B8EA902B-69FB-4F5A-AE1A-82CAD7FCB632}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBSF.Refdata.Business", "TBSF.Refdata.Business\TBSF.Refdata.Business.csproj", "{B8EA902B-69FB-4F5A-AE1A-82CAD7FCB632}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TBSF.MVCWebUi", "TBSF.MVCWebUi\TBSF.MVCWebUi.csproj", "{E7755703-784E-4A2C-AF0D-44CDF1410AC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBSF.MVCWebUi", "TBSF.MVCWebUi\TBSF.MVCWebUi.csproj", "{E7755703-784E-4A2C-AF0D-44CDF1410AC7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TBSF.WebAPITest", "TBSF.WebAPITest\TBSF.WebAPITest.csproj", "{784002C4-D6C8-4180-8BD9-7A130B3C7D03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E7755703-784E-4A2C-AF0D-44CDF1410AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7755703-784E-4A2C-AF0D-44CDF1410AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7755703-784E-4A2C-AF0D-44CDF1410AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{784002C4-D6C8-4180-8BD9-7A130B3C7D03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{784002C4-D6C8-4180-8BD9-7A130B3C7D03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{784002C4-D6C8-4180-8BD9-7A130B3C7D03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{784002C4-D6C8-4180-8BD9-7A130B3C7D03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

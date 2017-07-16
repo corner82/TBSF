@@ -5,12 +5,13 @@ using TBSF.Core.Entities;
 
 namespace TBSF.Refdata.Entities.Concrete
 {
-    class Ref : IEntity
+    public class Ref : IEntity
     {
-        public int RefId { get; set; }
-        public DateTime RefStartDate { get; set; }
-        public int CityId  { get; set; }
-        public int RegionId { get; set; }
+        public int RefID { get; set; }
+        public DateTime RefDate { get; set; }
+        public int RefCityID  { get; set; }
+        public int RefRegionID { get; set; }
+        public int RefUserID { get; set; }
 
 
     }

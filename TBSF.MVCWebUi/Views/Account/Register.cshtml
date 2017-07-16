@@ -1,0 +1,972 @@
+﻿@using System.Threading.Tasks
+@using TBSF.MVCWebUi.Extensions;
+@model TBSF.MVCWebUi.Models.RegisterViewModel
+
+@{
+    Layout = "~/Views/Shared/_RegisterLayout.cshtml";
+    ViewData["Title"] = "Kayıt Sayfası";
+}
+
+ <!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
+<!-- BEGIN: HEADER -->
+<header class="c-layout-header c-layout-header-4 c-layout-header-default-mobile" data-minimize-offset="80">
+    <div class="c-topbar c-topbar-light c-solid-bg">
+        <div class="container">
+            <!-- BEGIN: INLINE NAV -->
+            <nav class="c-top-menu c-pull-left">
+                <ul class="c-icons c-theme-ul">
+                    <li>
+                        <a href="#">
+                            <i class="icon-social-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-social-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-social-dribbble"></i>
+                        </a>
+                    </li>
+                    <li class="hide">
+                        <span>Phone: +99890345677</span>
+                    </li>
+                </ul>
+            </nav>
+            <!-- END: INLINE NAV -->
+            <!-- BEGIN: INLINE NAV -->
+            <nav class="c-top-menu c-pull-right">
+                <ul class="c-links c-theme-ul">
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="About" >Biz Kimiz</a>
+                    </li>
+                    <li class="c-divider">|</li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Contact">İletişim</a>
+                    </li>
+                    <li class="c-divider">|</li>
+                    <li>
+                        <a asp-area="" asp-controller="Home" asp-action="Faq">SSS</a>
+                    </li>
+                </ul>
+                <ul class="c-ext c-theme-ul">
+                    <!--<li class="c-lang dropdown c-last">
+                        <a href="#">en</a>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li class="active">
+                                <a href="#">English</a>
+                            </li>
+                            <li>
+                                <a href="#">German</a>
+                            </li>
+                            <li>
+                                <a href="#">Espaniol</a>
+                            </li>
+                            <li>
+                                <a href="#">Portugise</a>
+                            </li>
+                        </ul>
+                    </li>-->
+                    <li class="c-search hide">
+                        <!-- BEGIN: QUICK SEARCH -->
+                        <form action="#">
+                            <input type="text" name="query" placeholder="search..." value="" class="form-control" autocomplete="off">
+                            <i class="fa fa-search"></i>
+                        </form>
+                        <!-- END: QUICK SEARCH -->
+                    </li>
+                </ul>
+            </nav>
+            <!-- END: INLINE NAV -->
+        </div>
+    </div>
+    <div class="c-navbar">
+        <div class="container">
+            <!-- BEGIN: BRAND -->
+            <div class="c-navbar-wrapper clearfix">
+                <div class="c-brand c-pull-left" style="margin: 7px 0 19px 0;">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="c-logo">
+                        <img src="~/onyuz/assets/base/img/layout/logos/test3.png" alt="TRF" class="c-desktop-logo">
+                        <img src="~/onyuz/assets/base/img/layout/logos/test3.png" alt="TRF" class="c-desktop-logo-inverse">
+                        <img src="~/onyuz/assets/base/img/layout/logos/test3.png" alt="TRF" class="c-mobile-logo">
+                    </a>
+                    <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+                        <span class="c-line"></span>
+                        <span class="c-line"></span>
+                        <span class="c-line"></span>
+                    </button>
+                    <button class="c-topbar-toggler" type="button">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <button class="c-search-toggler" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button class="c-cart-toggler" type="button">
+                        <i class="icon-handbag"></i>
+                        <span class="c-cart-number c-theme-bg">2</span>
+                    </button>
+                </div>
+                <!-- END: BRAND -->
+                <!-- BEGIN: QUICK SEARCH -->
+                <form class="c-quick-search" action="#">
+                    <input type="text" name="query" placeholder="Type to search..." value="" class="form-control" autocomplete="off">
+                    <span class="c-theme-link">&times;</span>
+                </form>
+                <!-- END: QUICK SEARCH -->
+                <!-- BEGIN: HOR NAV -->
+                <!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU -->
+                <!-- BEGIN: MEGA MENU -->
+                <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
+                <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
+                    <ul class="nav navbar-nav c-theme-nav">
+                        <li class="c-active">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="c-link dropdown-toggle">
+                                Ana SAYFA
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                        </li>
+                        <li class="c-menu-type-classic">
+                            <a asp-area="" asp-controller="Home" asp-action="About" class="c-link dropdown-toggle">
+                                BİZ KİMİZ
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Faq" class="c-link dropdown-toggle">
+                                SSS
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Contact" class="c-link dropdown-toggle">
+                                İLETİŞİM
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="c-link dropdown-toggle">
+                                Örnek Menü
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                            <!-- BEGIN: DESKTOP VERSION OF THE TAB MEGA MENU -->
+                            <div class="dropdown-menu c-menu-type-mega c-visible-desktop c-pull-right c-menu-type-fullwidth" style="min-width: auto">
+                                <ul class="nav nav-tabs c-theme-nav">
+                                    <li class="active">
+                                        <a href="#megamenu_jango_components" data-toggle="tab">Örnek Sekme</a>
+                                    </li>
+                                    <li>
+                                        <a href="#megamenu_base_components" data-toggle="tab">Örnek Tab</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="megamenu_jango_components">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="megamenu_base_components">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="Örnek Alt Menü">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- BEGIN: DESKTOP VERSION OF THE TAB MEGA MENU -->
+                            <!-- BEGIN: MOBILE VERSION OF THE TAB MEGA MENU -->
+                            <ul class="dropdown-menu c-menu-type-mega c-visible-mobile">
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:;">
+                                        Örnek SEKME
+                                        <span class="c-arrow c-toggler"></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:;">
+                                        Örnek sekme
+                                        <span class="c-arrow c-toggler"></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- END: MOBILE VERSION OF THE TAB MEGA MENU -->
+                        </li>
+                        <li class="c-search-toggler-wrapper">
+                            <a href="#" class="c-btn-icon c-search-toggler">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="c-cart-toggler-wrapper">
+                            <a href="#" class="c-btn-icon c-cart-toggler">
+                                <i class="icon-handbag c-cart-icon"></i>
+                                <span class="c-cart-number c-theme-bg">2</span>
+                            </a>
+                        </li>
+                        <li class="c-quick-sidebar-toggler-wrapper">
+                            <a href="#" class="c-quick-sidebar-toggler">
+                                <span class="c-line"></span>
+                                <span class="c-line"></span>
+                                <span class="c-line"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- END: MEGA MENU -->
+                <!-- END: LAYOUT/HEADERS/MEGA-MENU -->
+                <!-- END: HOR NAV -->
+            </div>
+            <!-- BEGIN: LAYOUT/HEADERS/QUICK-CART -->
+            <!-- BEGIN: CART MENU -->
+            <div class="c-cart-menu">
+                <div class="c-cart-menu-title">
+                    <p class="c-cart-menu-float-l c-font-sbold">2 ürün</p>
+                    <p class="c-cart-menu-float-r c-theme-font c-font-sbold">92.50 YTL</p>
+                </div>
+                <ul class="c-cart-menu-items">
+                    <li>
+                        <div class="c-cart-menu-close">
+                            <a href="#" class="c-theme-link">×</a>
+                        </div>
+                        <img src="~/onyuz/assets/base/img/content/shop2/shop2_test.jpg" />
+                        <div class="c-cart-menu-content">
+                            <p>
+                                1 x
+                                <span class="c-item-price c-theme-font">70 YTL</span>
+                            </p>
+                            <a href="shop-product-details-2.html" class="c-item-name c-font-sbold">KPSS A Grubu Optimus Maliye Tamamı Çözümlü Soru Bankası 2017 - Ciltli</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-cart-menu-close">
+                            <a href="#" class="c-theme-link">×</a>
+                        </div>
+                        <img src="~/onyuz/assets/base/img/content/shop2/shop2_test2.jpg" />
+                        <div class="c-cart-menu-content">
+                            <p>
+                                1 x
+                                <span class="c-item-price c-theme-font">22.50 YTL</span>
+                            </p>
+                            <a href="shop-product-details.html" class="c-item-name c-font-sbold">KPSS A Grubu Tamamı Çözümlü 10 Deneme 2017</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="c-cart-menu-footer">
+                    <a href="shop-cart.html" class="btn btn-md c-btn c-btn-square c-btn-grey-3 c-font-white c-font-bold c-center c-font-uppercase">Sepete Git</a>
+                    <a href="shop-checkout.html" class="btn btn-md c-btn c-btn-square c-theme-btn c-font-white c-font-bold c-center c-font-uppercase">Satın Al</a>
+                </div>
+            </div>
+            <!-- END: CART MENU -->
+            <!-- END: LAYOUT/HEADERS/QUICK-CART -->
+        </div>
+    </div>
+</header>
+<!-- END: HEADER -->
+<!-- END: LAYOUT/HEADERS/HEADER-1 -->
+<!-- BEGIN: CONTENT/USER/FORGET-PASSWORD-FORM -->
+<div class="modal fade c-content-login-form" id="forget-password-form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content c-square">
+            <div class="modal-header c-no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 class="c-font-24 c-font-sbold">Şifre Oluşturun</h3>
+                <p>Yeni şifre oluşturmak için e-posta giriniz</p>
+                <form asp-controller="Account" asp-action="Register" method="post">
+                    <div class="form-group">
+                        <label for="forget-email" class="hide">E-Posta</label>
+                        <input type="email" class="form-control input-lg c-square" id="forget-email" placeholder="E-Posta">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">yeni Şifre</button>
+                        <a href="javascript:;" class="c-btn-forgot" data-toggle="modal" data-target="#login-form" data-dismiss="modal">Girişe Dön</a>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer c-no-border">
+                <span class="c-text-account">Henüz hesap oluşturmadınız mı ?</span>
+                <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">Kaydol!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: CONTENT/USER/FORGET-PASSWORD-FORM -->
+<!-- BEGIN: CONTENT/USER/SIGNUP-FORM -->
+<div class="modal fade c-content-login-form" id="signup-form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content c-square">
+            <div class="modal-header c-no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 class="c-font-24 c-font-sbold">Hesap Oluştur</h3>
+                <p>Formu doldurarak hesabınızı oluşturabilirsiniz.</p>
+                <form asp-controller="Account" asp-action="Register" method="post">
+                    <div class="form-group">
+                        <label for="signup-email" class="hide">E-Posta dddddddddddddd</label>
+                        <input asp-for="Email" type="email" class="form-control input-lg c-square" id="signup-email" placeholder="E-Posta">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-username" class="hide">Kullanıcı</label>
+                        <input asp-for="Password" type="email" class="form-control input-lg c-square" id="signup-username" placeholder="Username"> </div>
+                    <div class="form-group">
+                        <label for="signup-fullname" class="hide">Adınız</label>
+                        <input  class="form-control input-lg c-square" id="signup-fullname" placeholder="Adınız">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-country" class="hide">Şehir</label>
+                        <select class="form-control input-lg c-square" id="signup-country">
+                            <option value="1">Şehir seçiniz</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Kaydol</button>
+                        <a href="javascript:;" class="c-btn-forgot" data-toggle="modal" data-target="#login-form" data-dismiss="modal">Giriş sayfasına dön</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: CONTENT/USER/SIGNUP-FORM -->
+<!-- BEGIN: CONTENT/USER/LOGIN-FORM -->
+<div class="modal fade c-content-login-form" id="login-form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content c-square">
+            <div class="modal-header c-no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 class="c-font-24 c-font-sbold">Hoşgeldiniz!</h3>
+                <p>Keyifli Çalışmalar!</p>
+                <form asp-controller="Account" asp-action="Register" method="post">
+                    <div class="form-group">
+                        <label for="login-email" class="hide">E-Posta</label>
+                        <input asp-for="Email" type="email" class="form-control input-lg c-square" id="eposta" name="eposta" placeholder="E-Posta">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password" class="hide">Şifre</label>
+                        <input asp-for="Password" type="password" class="form-control input-lg c-square" id="sifre" name="sifre" placeholder="Şifre">
+                    </div>
+                    <div class="form-group">
+                        <div class="c-checkbox">
+                            <input type="checkbox" id="login-rememberme" class="c-check">
+                            <label for="login-rememberme" class="c-font-thin c-font-17">
+                                <span></span>
+                                <span class="check"></span>
+                                <span class="box"></span> Beni Hatırla
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Giriş</button>
+                        <a href="javascript:;" data-toggle="modal" data-target="#forget-password-form" data-dismiss="modal" class="c-btn-forgot">Şifremi Unuttum !</a>
+                    </div>
+                    <div class="clearfix">
+                        <div class="c-content-divider c-divider-sm c-icon-bg c-bg-grey c-margin-b-20">
+                            <span>yada aşağıdaki hesaplarla giriş yap</span>
+                        </div>
+                        <ul class="c-content-list-adjusted">
+                            <li>
+                                <a class="btn btn-block c-btn-square btn-social btn-twitter">
+                                    <i class="fa fa-twitter"></i> Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn btn-block c-btn-square btn-social btn-facebook">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn btn-block c-btn-square btn-social btn-google">
+                                    <i class="fa fa-google"></i> Google
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer c-no-border">
+                <span class="c-text-account">Hesap oluşturmadınız mı ?</span>
+                <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">Hesap Oluştur!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: CONTENT/USER/LOGIN-FORM -->
+<!-- BEGIN: LAYOUT/SIDEBARS/QUICK-SIDEBAR -->
+<nav class="c-layout-quick-sidebar">
+    <div class="c-header">
+        <button type="button" class="c-link c-close">
+            <i class="icon-login"></i>
+        </button>
+    </div>
+    <div class="c-content">
+        <div class="c-section">
+            <h3>Sınav Habercim</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+                <!--<span class="c-color c-default c-active" data-color="default"></span>
+                <span class="c-color c-green1" data-color="green1"></span>
+                <span class="c-color c-green2" data-color="green2"></span>
+                <span class="c-color c-green3" data-color="green3"></span>
+                <span class="c-color c-yellow1" data-color="yellow1"></span>
+                <span class="c-color c-yellow2" data-color="yellow2"></span>
+                <span class="c-color c-yellow3" data-color="yellow3"></span>
+                <span class="c-color c-red1" data-color="red1"></span>
+                <span class="c-color c-red2" data-color="red2"></span>
+                <span class="c-color c-red3" data-color="red3"></span>
+                <span class="c-color c-purple1" data-color="purple1"></span>
+                <span class="c-color c-purple2" data-color="purple2"></span>
+                <span class="c-color c-purple3" data-color="purple3"></span>
+                <span class="c-color c-blue1" data-color="blue1"></span>
+                <span class="c-color c-blue2" data-color="blue2"></span>
+                <span class="c-color c-blue3" data-color="blue3"></span>
+                <span class="c-color c-brown1" data-color="brown1"></span>
+                <span class="c-color c-brown2" data-color="brown2"></span>
+                <span class="c-color c-brown3" data-color="brown3"></span>
+                <span class="c-color c-dark1" data-color="dark1"></span>
+                <span class="c-color c-dark2" data-color="dark2"></span>
+                <span class="c-color c-dark3" data-color="dark3"></span>-->
+            </div>
+        </div>
+        <div class="c-section">
+            <h3>Favori Soru Tiplerim</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+            </div>
+        </div>
+        <div class="c-section">
+            <h3>Favori Sorularım</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+            </div>
+        </div>
+        <div class="c-section">
+            <h3>Son Testlerim</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+            </div>
+        </div>
+        <div class="c-section">
+            <h3>Mesajlar</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- END: LAYOUT/SIDEBARS/QUICK-SIDEBAR -->
+<!-- BEGIN: PAGE CONTAINER -->
+<div class="c-layout-page">
+    <!-- BEGIN: LAYOUT/BREADCRUMBS/BREADCRUMBS-2 -->
+    <div class="c-layout-breadcrumbs-1 c-subtitle c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both">
+        <div class="container">
+            <div class="c-page-title c-pull-left">
+                <h3 class="c-font-uppercase c-font-sbold">Kullanıcı Kayıt</h3>
+                <h4 class="">Test sınavlarına, bildirimlerinize erişim için giriş yapın </h4>
+            </div>
+            <ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+                <li>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" >Ana Sayfa</a>
+                </li>
+                <li>/</li>
+                <li>
+                    <a href="#">Kullanıcı Kayıt İşlemleri</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <!-- END: LAYOUT/BREADCRUMBS/BREADCRUMBS-2 -->
+    <!-- BEGIN: PAGE CONTENT -->
+    <!-- BEGIN: CONTENT/SHOPS/SHOP-LOGIN-REGISTER-1 -->
+    <div class="c-content-box c-size-md c-bg-white">
+        <div class="container">
+            <div class="c-shop-login-register-1">
+                <div class="row">
+                    <!--<div class="col-md-6">
+                        <div class="panel panel-default c-panel">
+                            <div class="panel-body c-panel-body">
+                                <form class="c-form-login" method="post" id="userLoginForm">
+                                    <div class="form-group has-feedback">
+                                        <input type="text" id="eposta" name="eposta" class="form-control c-square c-theme input-lg" placeholder="Kullanıcı">
+                                        <span class="glyphicon glyphicon-user form-control-feedback c-font-grey"></span>
+                                    </div>
+                                    <div class="form-group has-feedback">
+                                        <input type="password" id="sifre" name="sifre" class="form-control c-square c-theme input-lg" placeholder="şifre">
+                                        <span class="glyphicon glyphicon-lock form-control-feedback c-font-grey"></span>
+                                    </div>
+                                    <div class="row c-margin-t-40">
+                                        <div class="col-xs-8">
+                                            <div class="c-checkbox">
+                                                <input type="checkbox" id="checkbox1-77" class="c-check">
+                                                <label for="checkbox1-77">
+                                                    <span class="inc"></span>
+                                                    <span class="check"></span>
+                                                    <span class="box"></span> Beni Hatırla
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <button type="submit" class="pull-right btn btn-lg c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Giriş Yap</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="col-md-12">
+                        <div class="panel panel-default c-panel">
+                            <div class="panel-body c-panel-body">
+                                <div class="c-content-title-1">
+                                    <h3 class="c-left">
+                                        <i class="icon-user"></i> Henüz hesap oluşturmadınız mı?
+                                    </h3>
+                                    <div class="c-line-left c-theme-bg"></div>
+                                    <p>Bize katılın, bir adım öne geçin.</p>
+                                </div>
+                                <div class="c-margin-fix">
+                                    <div class="c-checkbox c-toggle-hide" data-object-selector="c-form-register" data-animation-speed="600">
+                                        <input type="checkbox" id="checkbox6-444" class="c-check">
+                                        <label for="checkbox6-444">
+                                            <span class="inc"></span>
+                                            <span class="check"></span>
+                                            <span class="box"></span> Şimdi Kaydol!
+                                        </label>
+                                    </div>
+                                </div>
+                                <form asp-controller="Account" asp-action="Register" method="post" class="c-form-register c-margin-t-20">
+                                    <!--<div class="form-group">
+                                        <label class="control-label">Country</label>
+                                        <select class="form-control c-square c-theme">
+                                            <option value="1">Malaysia</option>
+                                            <option value="2">Singapore</option>
+                                            <option value="3">Indonesia</option>
+                                            <option value="4">Thailand</option>
+                                            <option value="5">China</option>
+                                        </select>
+                                    </div>-->
+                                    <div class="form-group">
+                                        <label class="control-label">E-Posta</label>
+                                        <input asp-for="Email" type="email" class="form-control c-square c-theme" placeholder="E-Posta">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Şifre</label>
+                                        <input asp-for="Password" type="password" class="form-control c-square c-theme" placeholder="Şifre">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="control-label">Adınız</label>
+                                                <input type="text" class="form-control c-square c-theme" placeholder="Adınız">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="control-label">Soyadınız</label>
+                                                <input type="text" class="form-control c-square c-theme" placeholder="Soyadınız">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Adres</label>
+                                        <input type="text" class="form-control c-square c-theme" placeholder="Cadde(İsteğe Bağlı)">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control c-square c-theme" placeholder="Sokak, Apartman No(İsteğe Bağlı)">
+                                    </div>
+                                    <!--<div class="form-group">
+                                        <label class="control-label">Şehir</label>
+                                        <input type="text" class="form-control c-square c-theme" placeholder="Şehir"> </div>-->
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Şehir</label>
+                                            <select class="form-control c-square c-theme">
+                                                <option value="0">Şehir seçiniz...</option>
+                                                <option value="1">Ankara</option>
+                                                <option value="2">İstanbul</option>
+                                                <option value="3">İzmir</option>
+                                                <option value="4">Bursa</option>
+                                                <option value="5">Adana</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Posta kodu</label>
+                                            <input type="text" class="form-control c-square c-theme" placeholder="Posta kodu(İsteğe Bağlı)">
+                                        </div>
+                                    </div>
+                                    <!--<div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label class="control-label">Email Address</label>
+                                            <input type="email" class="form-control c-square c-theme" placeholder="Email Address"> </div>
+                                        <div class="col-md-6">
+                                            <label class="control-label">Phone</label>
+                                            <input type="tel" class="form-control c-square c-theme" placeholder="Phone"> </div>
+                                    </div>-->
+
+                                    <div class="form-group c-margin-t-40">
+                                        <button type="submit" class="btn btn-lg c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Kayıt</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="list-unstyled c-bs-grid-small-space">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 c-margin-t-10">
+                                    <a class="btn btn-block btn-social c-btn-square c-btn-uppercase btn-md btn-twitter">
+                                        <i class="fa fa-twitter"></i> Twİtter Hesabınızla Gİrİş Yapın
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-4 c-margin-t-10">
+                                    <a class="btn btn-block btn-social c-btn-square c-btn-uppercase btn-md btn-facebook">
+                                        <i class="fa fa-facebook"></i> Facebook Hesabınızla Gİrİş Yapın
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-sm-4 c-margin-t-10">
+                                    <a class="btn btn-block btn-social c-btn-square c-btn-uppercase btn-md btn-google">
+                                        <i class="fa fa-google-plus"></i> Google Hesabınızla Gİrİş Yapın
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/SHOPS/SHOP-LOGIN-REGISTER-1 -->
+    <!-- END: PAGE CONTENT -->
+</div>
+<!-- END: PAGE CONTAINER -->
+<!-- BEGIN: LAYOUT/FOOTERS/FOOTER-6 -->
+<a name="footer"></a>
+<footer class="c-layout-footer c-layout-footer-6 c-bg-grey-1">
+    <div class="container">
+        <div class="c-prefooter c-bg-white">
+            <div class="c-head">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="c-left">
+                            <div class="socicon">
+                                <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-facebook tooltips" data-original-title="Facebook" data-container="body"></a>
+                                <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-twitter tooltips" data-original-title="Twitter" data-container="body"></a>
+                                <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-youtube tooltips" data-original-title="Youtube" data-container="body"></a>
+                                <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-tumblr tooltips" data-original-title="Tumblr" data-container="body"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="c-right">
+                            <h3 class="c-title c-font-uppercase c-font-bold">Mobİl Uygulamamızı İndİrİn</h3>
+                            <div class="c-icons">
+                                <a href="#" class="c-font-30 c-font-green-1 socicon-btn c-bg-grey-1-hover socicon-android tooltips" data-original-title="Android" data-container="body"></a>
+                                <a href="#" class="c-font-30 c-font-grey-3 socicon-btn c-bg-grey-1-hover socicon-apple tooltips" data-original-title="Apple" data-container="body"></a>
+                                <a href="#" class="c-font-30 c-font-blue-3 socicon-btn c-bg-grey-1-hover socicon-windows tooltips" data-original-title="Windows" data-container="body"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-line"></div>
+            <div class="c-body">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <ul class="c-links c-theme-ul">
+                            <li>
+                                <a href="#">Soru Bankası Hakkında</a>
+                            </li>
+                            <li>
+                                <a href="#">Gizlilik Şartları</a>
+                            </li>
+                            <li>
+                                <a href="#">Üyelik Sözleşmesi</a>
+                            </li>
+                            <li>
+                                <a href="#">Promosyonlar</a>
+                            </li>
+                            <li>
+                                <a href="#">Haberler</a>
+                            </li>
+                            <li>
+                                <a href="#">Son Baskılar</a>
+                            </li>
+                        </ul>
+                        <ul class="c-links c-theme-ul">
+                            <li>
+                                <a href="#">Blok</a>
+                            </li>
+                            <li>
+                                <a href="#">Projeler</a>
+                            </li>
+                            <li>
+                                <a href="#">Çözüm Ortakları</a>
+                            </li>
+                            <li>
+                                <a href="#">Hizmetlerimiz</a>
+                            </li>
+                            <li>
+                                <a href="#">Özelliklerimiz</a>
+                            </li>
+                            <li>
+                                <a href="#">İstatistikler</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-12">
+                        <div class="c-content-title-1 c-title-md">
+                            <h3 class="c-title c-font-uppercase c-font-bold">Son Haberler</h3>
+                            <div class="c-line-left hide"></div>
+                        </div>
+                        <div class="c-twitter">
+                            <a class="twitter-timeline" href="#" data-widget-id="626329365547061249" data-tweet-limit="2" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by ...</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="c-content-title-1 c-title-md">
+                            <h3 class="c-title c-font-uppercase c-font-bold">Bizimle İletİşİme geçİn</h3>
+                            <div class="c-line-left hide"></div>
+                        </div>
+                        <p class="c-address c-font-16">
+                            Mrş. Fevzi Çakmak Cad. Soru Sok.33/5
+                            <br /> Ankara, Türkiye
+                            <br /> Phone: +90 312 434 34 34
+                            <br /> Fax: +90 312 433 33 33
+                            <br /> Email:
+                            <a href="mailto:info@sorubankasi.com">
+                                <span class="c-theme-color">info@sorubankasi.com</span>
+                            </a>
+                            <br /> Skype:
+                            <a href="#">
+                                <span class="c-theme-color">sorubankasi</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="c-line"></div>
+            <div class="c-foot">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="c-content-title-1 c-title-md">
+                            <h3 class="c-font-uppercase c-font-bold">
+                                Soru Bankası
+                                <span class="c-theme-font">Hakkında</span>
+                            </h3>
+                            <div class="c-line-left hide"></div>
+                        </div>
+                        <p class="c-text c-font-16 c-font-regular">Konu analizi sayfaları ile tüm SoruTiplerini gözden geçirebilir, konu içerisindeki ilerlemeni takip edebilirsin.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="c-content-title-1 c-title-md">
+                            <h3 class="c-font-uppercase c-font-bold">E-Posta Grubuna Üye Olun</h3>
+                            <div class="c-line-left hide"></div>
+                        </div>
+                        <div class="c-line-left hide"></div>
+                        <form action="#">
+                            <div class="input-group input-group-lg c-square">
+                                <input type="text" class="form-control c-square c-font-grey-3 c-border-grey c-theme" placeholder="E-Posta yazınız" />
+                                <span class="input-group-btn">
+                                    <button class="btn c-theme-btn c-theme-border c-btn-square c-btn-uppercase c-font-16" type="button">Üye Ol</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-postfooter c-bg-dark-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 c-col">
+                    <p class="c-copyright c-font-grey">
+                        2017 &copy; Soru Bankası
+                        <span class="c-font-grey-3">Tüm Hakları Saklıdır.</span>
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-12 c-col">
+                    <ul class="list-unstyled list-inline pull-right">
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/1.png" width="60" />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/2.png" width="60" />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/22.png" width="60" />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/5.png" width="60" />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/6.png" width="60" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END: LAYOUT/FOOTERS/FOOTER-6 -->
+<!-- BEGIN: LAYOUT/FOOTERS/GO2TOP -->
+<div class="c-layout-go2top">
+    <i class="icon-arrow-up"></i>
+</div>
+<!-- END: LAYOUT/FOOTERS/GO2TOP -->

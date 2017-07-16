@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TBSF.Core\TBSF.Core.csproj" />
+    <ProjectReference Include="..\TBSF.Refdata.DataAccess\TBSF.Refdata.DataAccess.csproj" />
+    <ProjectReference Include="..\TBSF.Refdata.Entities\TBSF.Refdata.Entities.csproj" />
+  </ItemGroup>
 
 </Project>

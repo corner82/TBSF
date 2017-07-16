@@ -1,108 +1,1730 @@
-﻿@{
+﻿@model TBSF.MVCWebUi.Models.RefListViewModel
+@using TBSF.MVCWebUi.Extensions;
+@{
+    Layout = "~/Views/Shared/_OnePageLandingLayout.cshtml";
     ViewData["Title"] = "Home Page";
 }
 
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
+<!-- BEGIN: LAYOUT/HEADERS/HEADER-1 -->
+<!-- BEGIN: HEADER -->
+<header class="c-layout-header c-layout-header-4 c-layout-header-default-mobile" data-minimize-offset="80">
+    <div class="c-navbar">
+        <div class="container">
+            <!-- BEGIN: BRAND -->
+            <div class="c-navbar-wrapper clearfix">
+                <div class="c-brand c-pull-left" style="margin: 7px 0 19px 0;">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="c-logo">
+                        <img src="~/onyuz/assets/base/img/layout/logos/test3.png" alt="TRF Faal Hakemler Derneği" class="c-desktop-logo">
+                        <img src="~/onyuz/assets/base/img/layout/logos/test3.png" alt="TRF Faal Hakemler Derneği" class="c-desktop-logo-inverse">
+                        <img src="~/onyuz/assets/base/img/layout/logos/test3.png" alt="TRF Faal Hakemler Derneği" class="c-mobile-logo">
                     </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Package Management" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Bring in libraries from NuGet, Bower, and npm, and automate tasks using Grunt or Gulp.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
+                    <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+                        <span class="c-line"></span>
+                        <span class="c-line"></span>
+                        <span class="c-line"></span>
+                    </button>
+                    <button class="c-topbar-toggler" type="button">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <button class="c-search-toggler" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button class="c-cart-toggler" type="button">
+                        <i class="icon-handbag"></i>
+                        <span class="c-cart-number c-theme-bg">2</span>
+                    </button>
+                </div>
+                <!-- END: BRAND -->
+                <!-- BEGIN: QUICK SEARCH -->
+                <form class="c-quick-search" action="#">
+                    <input type="text" name="query" placeholder="Type to search..." value="" class="form-control" autocomplete="off">
+                    <span class="c-theme-link">&times;</span>
+                </form>
+                <!-- END: QUICK SEARCH -->
+                <!-- BEGIN: HOR NAV -->
+                <!-- BEGIN: LAYOUT/HEADERS/MEGA-MENU -->
+                <!-- BEGIN: MEGA MENU -->
+                <!-- Dropdown menu toggle on mobile: c-toggler class can be applied to the link arrow or link itself depending on toggle mode -->
+                <nav class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-fonts-uppercase c-fonts-bold">
+                    <ul class="nav navbar-nav c-theme-nav">
+                        <li class="c-active">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="c-link dropdown-toggle">
+                                Ana SAYFA
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                        </li>
+                        <li class="c-menu-type-classic">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="c-link dropdown-toggle">
+                                BİZ KİMİZ
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="c-link dropdown-toggle">
+                                SSS
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="About" class="c-link dropdown-toggle">
+                                İLETİŞİM
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a asp-area="" asp-controller="Account" asp-action="Register" class="c-link dropdown-toggle">
+                                Kayıt
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                        </li>
 
-<div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518004">Bower</a> for managing client-side libraries</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
+                       
+                        @if (!@User.IsUserAuthenticated())
+                        {
+                            <li>
+                                <a asp-area="" asp-controller="Account" asp-action="Login" class="c-link dropdown-toggle">
+                                    Giriş 
+                                    <span class="c-arrow c-toggler"></span>
+                                </a>
+                            </li>
+                        }
+                        <li>
+                            <a href="javascript:;" class="c-link dropdown-toggle">
+                                Örnek Menü
+                                <span class="c-arrow c-toggler"></span>
+                            </a>
+                            <!-- BEGIN: DESKTOP VERSION OF THE TAB MEGA MENU -->
+                            <div class="dropdown-menu c-menu-type-mega c-visible-desktop c-pull-right c-menu-type-fullwidth" style="min-width: auto">
+                                <ul class="nav nav-tabs c-theme-nav">
+                                    <li class="active">
+                                        <a href="#megamenu_jango_components" data-toggle="tab">Örnek Sekme</a>
+                                    </li>
+                                    <li>
+                                        <a href="#megamenu_base_components" data-toggle="tab">Örnek Tab</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="megamenu_jango_components">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="megamenu_base_components">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="Örnek Alt Menü">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- BEGIN: DESKTOP VERSION OF THE TAB MEGA MENU -->
+                            <!-- BEGIN: MOBILE VERSION OF THE TAB MEGA MENU -->
+                            <ul class="dropdown-menu c-menu-type-mega c-visible-mobile">
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:;">
+                                        Örnek SEKME
+                                        <span class="c-arrow c-toggler"></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:;">
+                                        Örnek sekme
+                                        <span class="c-arrow c-toggler"></span>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <ul class="dropdown-menu c-menu-type-inline">
+                                                    <li>
+                                                        <a href="#">Örnek Alt Menü</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!-- END: MOBILE VERSION OF THE TAB MEGA MENU -->
+                        </li>
+                        <li class="c-search-toggler-wrapper">
+                            <a href="#" class="c-btn-icon c-search-toggler">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                        <li class="c-cart-toggler-wrapper">
+                            <a href="#" class="c-btn-icon c-cart-toggler">
+                                <i class="icon-handbag c-cart-icon"></i>
+                                <span class="c-cart-number c-theme-bg">2</span>
+                            </a>
+                        </li>
+                        <li class="c-quick-sidebar-toggler-wrapper">
+                            <a href="#" class="c-quick-sidebar-toggler">
+                                <span class="c-line"></span>
+                                <span class="c-line"></span>
+                                <span class="c-line"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- END: MEGA MENU -->
+                <!-- END: LAYOUT/HEADERS/MEGA-MENU -->
+                <!-- END: HOR NAV -->
+            </div>
+            <!-- BEGIN: LAYOUT/HEADERS/QUICK-CART -->
+            <!-- BEGIN: CART MENU -->
+            <div class="c-cart-menu">
+                <div class="c-cart-menu-title">
+                    <p class="c-cart-menu-float-l c-font-sbold">2 ürün</p>
+                    <p class="c-cart-menu-float-r c-theme-font c-font-sbold">92.50 YTL</p>
+                </div>
+                <ul class="c-cart-menu-items">
+                    <li>
+                        <div class="c-cart-menu-close">
+                            <a href="#" class="c-theme-link">×</a>
+                        </div>
+                        <img src="~/onyuz/assets/base/img/content/shop2/shop2_test.jpg" />
+                        <div class="c-cart-menu-content">
+                            <p>
+                                1 x
+                                <span class="c-item-price c-theme-font">70 YTL</span>
+                            </p>
+                            <a href="shop-product-details-2.html" class="c-item-name c-font-sbold">KPSS A Grubu Optimus Maliye Tamamı Çözümlü Soru Bankası 2017 - Ciltli</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-cart-menu-close">
+                            <a href="#" class="c-theme-link">×</a>
+                        </div>
+                        <img src="~/onyuz/assets/base/img/content/shop2/shop2_test2.jpg" />
+                        <div class="c-cart-menu-content">
+                            <p>
+                                1 x
+                                <span class="c-item-price c-theme-font">22.50 YTL</span>
+                            </p>
+                            <a href="shop-product-details.html" class="c-item-name c-font-sbold">KPSS A Grubu Tamamı Çözümlü 10 Deneme 2017</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="c-cart-menu-footer">
+                    <a href="#" class="btn btn-md c-btn c-btn-square c-btn-grey-3 c-font-white c-font-bold c-center c-font-uppercase">Sepete Git</a>
+                    <a href="#" class="btn btn-md c-btn c-btn-square c-theme-btn c-font-white c-font-bold c-center c-font-uppercase">Satın Al</a>
+                </div>
+            </div>
+            <!-- END: CART MENU -->
+            <!-- END: LAYOUT/HEADERS/QUICK-CART -->
+        </div>
     </div>
-    <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699318">Add client packages using Bower.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Overview</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Run & Deploy</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
-        </ul>
+</header>
+<!-- END: HEADER -->
+<!-- END: LAYOUT/HEADERS/HEADER-1 -->
+<!-- BEGIN: CONTENT/USER/FORGET-PASSWORD-FORM -->
+<div class="modal fade c-content-login-form" id="forget-password-form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content c-square">
+            <div class="modal-header c-no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 class="c-font-24 c-font-sbold">Password Recovery</h3>
+                <p>To recover your password please fill in your email address</p>
+                <form>
+                    <div class="form-group">
+                        <label for="forget-email" class="hide">Email</label>
+                        <input type="email" class="form-control input-lg c-square" id="forget-email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Submit</button>
+                        <a href="javascript:;" class="c-btn-forgot" data-toggle="modal" data-target="#login-form" data-dismiss="modal">Back To Login</a>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer c-no-border">
+                <span class="c-text-account">Don't Have An Account Yet ?</span>
+                <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">Signup!</a>
+            </div>
+        </div>
     </div>
 </div>
+<!-- END: CONTENT/USER/FORGET-PASSWORD-FORM -->
+<!-- BEGIN: CONTENT/USER/SIGNUP-FORM -->
+<div class="modal fade c-content-login-form" id="signup-form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content c-square">
+            <div class="modal-header c-no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 class="c-font-24 c-font-sbold">Create An Account</h3>
+                <p>Please fill in below form to create an account with us</p>
+                <form>
+                    <div class="form-group">
+                        <label for="signup-email" class="hide">Email</label>
+                        <input type="email" class="form-control input-lg c-square" id="signup-email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-username" class="hide">Username</label>
+                        <input type="email" class="form-control input-lg c-square" id="signup-username" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-fullname" class="hide">Fullname</label>
+                        <input type="email" class="form-control input-lg c-square" id="signup-fullname" placeholder="Fullname">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-country" class="hide">Country</label>
+                        <select class="form-control input-lg c-square" id="signup-country">
+                            <option value="1">Country</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Signup</button>
+                        <a href="javascript:;" class="c-btn-forgot" data-toggle="modal" data-target="#login-form" data-dismiss="modal">Back To Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: CONTENT/USER/SIGNUP-FORM -->
+<!-- BEGIN: CONTENT/USER/LOGIN-FORM -->
+<div class="modal fade c-content-login-form" id="login-form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content c-square">
+            <div class="modal-header c-no-border">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h3 class="c-font-24 c-font-sbold">Good Afternoon!</h3>
+                <p>Let's make today a great day!</p>
+                <form>
+                    <div class="form-group">
+                        <label for="login-email" class="hide">Email</label>
+                        <input type="email" class="form-control input-lg c-square" id="login-email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password" class="hide">Password</label>
+                        <input type="password" class="form-control input-lg c-square" id="login-password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <div class="c-checkbox">
+                            <input type="checkbox" id="login-rememberme" class="c-check">
+                            <label for="login-rememberme" class="c-font-thin c-font-17">
+                                <span></span>
+                                <span class="check"></span>
+                                <span class="box"></span> Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Login</button>
+                        <a href="javascript:;" data-toggle="modal" data-target="#forget-password-form" data-dismiss="modal" class="c-btn-forgot">Forgot Your Password ?</a>
+                    </div>
+                    <div class="clearfix">
+                        <div class="c-content-divider c-divider-sm c-icon-bg c-bg-grey c-margin-b-20">
+                            <span>or signup with</span>
+                        </div>
+                        <ul class="c-content-list-adjusted">
+                            <li>
+                                <a class="btn btn-block c-btn-square btn-social btn-twitter">
+                                    <i class="fa fa-twitter"></i> Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn btn-block c-btn-square btn-social btn-facebook">
+                                    <i class="fa fa-facebook"></i> Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a class="btn btn-block c-btn-square btn-social btn-google">
+                                    <i class="fa fa-google"></i> Google
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer c-no-border">
+                <span class="c-text-account">Don't Have An Account Yet ?</span>
+                <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">Signup!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: CONTENT/USER/LOGIN-FORM -->
+<!-- BEGIN: LAYOUT/SIDEBARS/QUICK-SIDEBAR -->
+<nav class="c-layout-quick-sidebar">
+    <div class="c-header">
+        <button type="button" class="c-link c-close">
+            <i class="icon-login"></i>
+        </button>
+    </div>
+    <div class="c-content">
+        <div class="c-section">
+            <h3>Sınav Habercim</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+                <!--<span class="c-color c-default c-active" data-color="default"></span>
+                <span class="c-color c-green1" data-color="green1"></span>
+                <span class="c-color c-green2" data-color="green2"></span>
+                <span class="c-color c-green3" data-color="green3"></span>
+                <span class="c-color c-yellow1" data-color="yellow1"></span>
+                <span class="c-color c-yellow2" data-color="yellow2"></span>
+                <span class="c-color c-yellow3" data-color="yellow3"></span>
+                <span class="c-color c-red1" data-color="red1"></span>
+                <span class="c-color c-red2" data-color="red2"></span>
+                <span class="c-color c-red3" data-color="red3"></span>
+                <span class="c-color c-purple1" data-color="purple1"></span>
+                <span class="c-color c-purple2" data-color="purple2"></span>
+                <span class="c-color c-purple3" data-color="purple3"></span>
+                <span class="c-color c-blue1" data-color="blue1"></span>
+                <span class="c-color c-blue2" data-color="blue2"></span>
+                <span class="c-color c-blue3" data-color="blue3"></span>
+                <span class="c-color c-brown1" data-color="brown1"></span>
+                <span class="c-color c-brown2" data-color="brown2"></span>
+                <span class="c-color c-brown3" data-color="brown3"></span>
+                <span class="c-color c-dark1" data-color="dark1"></span>
+                <span class="c-color c-dark2" data-color="dark2"></span>
+                <span class="c-color c-dark3" data-color="dark3"></span>-->
+            </div>
+        </div>
+        <div class="c-section">
+            <h3>Favori Soru Tiplerim</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+            </div>
+        </div>
+        <div class="c-section">
+            <h3>Favori Sorularım</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+            </div>
+        </div>
+        <div class="c-section">
+            <h3>Son Testlerim</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+            </div>
+        </div>
+        <div class="c-section">
+            <h3>Mesajlar</h3>
+            <div class="c-settings">
+                burası kullanılabilir....
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- END: LAYOUT/SIDEBARS/QUICK-SIDEBAR -->
+<!-- BEGIN: PAGE CONTAINER -->
+<div class="c-layout-page">
+    <!-- BEGIN: PAGE CONTENT -->
+    <!-- BEGIN: LAYOUT/SLIDERS/REVO-SLIDER-4 -->
+    <section class="c-layout-revo-slider c-layout-revo-slider-4">
+        <div class="tp-banner-container c-theme">
+            <div class="tp-banner rev_slider" data-version="5.0">
+                <ul>
+                    <!--BEGIN: SLIDE #1 -->
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
+                        <img alt="" src="~/onyuz/assets/base/img/content/backgrounds/bg_test10.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                        <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
+                             data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
+                            <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block">
+                                SİSTEMATİK EĞİTİM PROGRAMLARIYLA
+                                <br>AMACA VE HEDEFE KOLAY ULAŞIN
+                            </h3>
+                        </div>
+                        
+                        <div class="tp-caption lft" data-x="center" data-y="center" data-voffset="110" data-speed="900" data-start="2000" data-transform_idle="o:1;" data-transform_in="x:100;y:100;rX:120;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
+                             data-transform_out="x:100;y:100;rX:120;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;">
+                            <a href="#" class="c-action-btn btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase">GİRİŞ YAP</a>
+                        </div>
+                    </li>
+                    <!--END -->
+                    <!--BEGIN: SLIDE #2 -->
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
+                        <img alt="" src="~/onyuz/assets/base/img/content/backgrounds/bg_test9.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                        <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
+                             data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
+                            <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block">
+                                BİNLERCE SORU KİTAPÇIĞINI
+                                <br>AYAĞINIZA GETİRELİM
+                            </h3>
+                        </div>
+                        <div class="tp-caption lft" data-x="center" data-y="center" data-voffset="110" data-speed="900" data-start="2000" data-transform_idle="o:1;" data-transform_in="x:100;y:100;rX:120;scaleX:0.75;scaleY:0.75;o:0;s:900;e:Back.easeInOut;"
+                             data-transform_out="x:100;y:100;rX:120;scaleX:0.75;scaleY:0.75;o:0;s:900;e:Back.easeInOut;">
+                            <a href="#" class="c-action-btn btn btn-lg c-btn-square c-theme-btn c-btn-bold c-btn-uppercase">Daha FAZLA BİLGİ</a>
+                        </div>
+                    </li>
+                    <!--END -->
+                    <!--BEGIN: SLIDE #3 -->
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="700" data-delay="6000" data-thumb="">
+                        <!-- THE MAIN IMAGE IN THE FIRST SLIDE -->
+                        <img alt="" src="~/onyuz/assets/base/img/content/backgrounds/bg_test8.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="visible-xs" />
+                        <div class="rs-background-video-layer" data-forcerewind="on" data-volume="mute" data-videowidth="100%" data-videoheight="100%" data-videomp4="~/onyuz/assets/base/media/video/video-2.mp4" data-videopreload="preload" data-videoloop="none"
+                             data-forceCover="1" data-aspectratio="16:9" data-autoplay="true" data-autoplayonlyfirsttime="false" data-nextslideatend="true"></div>
+                        <div class="tp-caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-30" data-speed="500" data-start="1000" data-transform_idle="o:1;" data-transform_in="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:500;e:Back.easeInOut;"
+                             data-transform_out="rX:0.5;scaleX:0.75;scaleY:0.75;o:0;s:600;e:Back.easeInOut;" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
+                            <h3 class="c-main-title-square c-font-55 c-font-bold c-font-center c-font-uppercase c-font-white c-block">
+                                Soru BAnkası İle
+                                <br>Zoru Kolaya Çevirelİm
+                            </h3>
+                        </div>
+                        <div class="tp-caption lft" data-x="center" data-y="center" data-voffset="130" data-speed="900" data-start="2000" data-transform_idle="o:1;" data-transform_in="x:100;y:100;rX:120;scaleX:0.75;scaleY:0.75;o:0;s:900;e:Back.easeInOut;"
+                             data-transform_out="x:100;y:100;rX:120;scaleX:0.75;scaleY:0.75;o:0;s:900;e:Back.easeInOut;">
+                            <a href="#" class="c-action-btn btn btn-lg c-btn-square c-btn-border-2x c-btn-white c-btn-bold c-btn-uppercase">DAHA FAZLA BİLGİ</a>
+                        </div>
+                    </li>
+                    <!--END -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- END: LAYOUT/SLIDERS/REVO-SLIDER-4 -->
+    <!-- BEGIN: CONTENT/FEATURES/FEATURES-1 -->
+    <div class="c-content-box c-size-md c-bg-white">
+        <div class="container">
+            <div class="row">
+                <div id="div1" name="div1"></div>
+                <div class="col-sm-4">
+                    <div class="c-content-feature-1 wow animate fadeInUp">
+                        <div class="c-content-line-icon c-theme c-icon-screen-chart"></div>
+                        <h3 class="c-font-uppercase c-font-bold">Son MÜFREDAT VE SORULAR</h3>
+                        <p class="c-font-thin">Son müfredat ve sorular sizin için bir araya getirildi.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.2s">
+                        <div class="c-content-line-icon c-theme c-icon-support"></div>
+                        <h3 class="c-font-uppercase c-font-bold">HEr YERDEN ERİŞİM</h3>
+                        <p class="c-font-thin">
+                            Her yerden ve cihazdan erişim sağlayın.
+                            <br />Tatilde,sahilde , yolculukta ne zaman isterseniz çalışma ortamınız elinizin altında.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-4 c-card">
+                    <div class="c-content-feature-1 wow animate fadeInUp" data-wow-delay="0.4s">
+                        <div class="c-content-line-icon c-theme c-icon-bulb"></div>
+                        <h3 class="c-font-uppercase c-font-bold">SINIRSIZ DESTEK</h3>
+                        <p class="c-font-thin">
+                            Sınırsız eğitim desteğimizle başarıya ulaşın.
+                            <br />Sistematik ve bilimsel  eğitim programınızı kendiniz belirleyin.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/FEATURES/FEATURES-1 -->
+    <!-- BEGIN: CONTENT/MISC/WHY-CHOOSE-US-1 -->
+    <div class="c-content-box c-size-lg c-bg-grey-1">
+        <div class="container">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="c-content-feature-5">
+                            <div class="c-content-title-1 wow amimate fadeInDown">
+                                <h3 class="c-left c-font-dark c-font-uppercase c-font-bold">
+                                    Neden
+                                    <br />SORU BANKASI ?
+                                </h3>
+                                <div class="c-line-left c-bg-blue-3 c-theme-bg"></div>
+                            </div>
+                            <div class="c-text wow animate fadeInLeft"> Soru Bankası içeriğindeki sayısız konu ve testlerle size zaman ve kolaylık sağlar. </div>
+                            <button type="button" class="btn c-btn-uppercase btn-md c-btn-bold c-btn-square c-theme-btn wow animate fadeIn">İnceleyİn</button>
+                            <img class="c-photo img-responsive wow animate fadeInUp" width="420" alt="" src="~/onyuz/assets/base/img/content/misc/misc_test1.jpg" />
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="c-content-accordion-1 c-theme wow animate fadeInRight">
+                            <div class="panel-group" id="accordion" role="tablist">
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a class="c-font-bold c-font-uppercase c-font-19" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Önemli BİR ÇALIŞMA KAYNAĞI </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body c-font-18"> Sizin için sizin özelliklerinize göre şekillendirilmiş eğitim önerileri. </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed c-font-uppercase c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Güncel SORU KİTAPÇIKLARI </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body c-font-18"> Güncel ve düzenlenmiş soru kitapçıkları ile mevzuata tam hakim olun. </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed c-font-uppercase c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> SINAV VE TARİHLERİNE GÖRE FIRSATLR </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                        <div class="panel-body c-font-18"> Sınav ve tarihlerine göre sizin için hazırlanmış fırsat ve paketler. </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/MISC/WHY-CHOOSE-US-1 -->
+    <!-- BEGIN: CONTENT/TILES/TILE-3 -->
+    <div class="c-content-box c-size-md c-bg-white">
+        <div class="c-content-tile-grid c-bs-grid-reset-space" data-auto-height="true">
+            <div class="c-content-title-1 wow animate fadeInDown">
+                <h3 class="c-font-uppercase c-center c-font-bold">SORU BANKASI HİZMETLERİ</h3>
+                <div class="c-line-center"></div>
+            </div>
+            <div class="row wow animate fadeInUp">
+                <div class="col-md-6">
+                    <div class="c-content-tile-1 c-bg-green">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="c-tile-content c-content-v-center" data-height="height">
+                                    <div class="c-wrapper">
+                                        <div class="c-body c-center">
+                                            <h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white"> Soru Bankası İle HİÇBİR ŞEY ZOR DEĞİL </h3>
+                                            <a href="#" class="btn btn-sm c-btn-white c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">DAHA FAZLA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="c-tile-content c-arrow-right c-arrow-green c-content-overlay">
+                                    <div class="c-overlay-wrapper">
+                                        <div class="c-overlay-content">
+                                            <a href="#">
+                                                <i class="icon-link"></i>
+                                            </a>
+                                            <a href="~/onyuz/assets/base/img/content/stock/stok_test2.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-4">
+                                                <i class="icon-magnifier"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-image c-overlay-object" data-height="height" style="background-image: url(/onyuz/assets/base/img/content/stock/stok_test2.jpg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="c-content-tile-1 c-bg-brown-2">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="c-tile-content c-content-v-center" data-height="height">
+                                    <div class="c-wrapper">
+                                        <div class="c-body c-center">
+                                            <h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white"> Binlerce soru ELİNİZİN ALTINDA </h3>
+                                            <p class="c-tile-body c-font-white">Sizin için hazırlanmış binlerce soru ve açıklamaları.</p>
+                                            <a href="#" class="btn btn-sm c-btn-white c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">DAHA FAZLA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="c-tile-content c-arrow-right c-arrow-brown-2 c-content-overlay">
+                                    <div class="c-overlay-wrapper">
+                                        <div class="c-overlay-content">
+                                            <a href="#">
+                                                <i class="icon-link"></i>
+                                            </a>
+                                            <a href="~/onyuz/assets/base/img/content/stock/stok_test3.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-4">
+                                                <i class="icon-magnifier"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-image c-overlay-object" data-height="height" style="background-image: url(/onyuz/assets/base/img/content/stock/stok_test3.jpg)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="c-content-tile-1 c-bg-red-2">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="c-tile-content c-arrow-left c-arrow-red-2 c-content-overlay">
+                                    <div class="c-overlay-wrapper">
+                                        <div class="c-overlay-content">
+                                            <a href="#">
+                                                <i class="icon-link"></i>
+                                            </a>
+                                            <a href="~/onyuz/assets/base/img/content/stock/41.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-4">
+                                                <i class="icon-magnifier"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-image c-overlay-object" data-height="height" style="background-image: url(onyuz/assets/base/img/content/stock/41.jpg)"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="c-tile-content c-content-v-center" data-height="height">
+                                    <div class="c-wrapper">
+                                        <div class="c-body c-center">
+                                            <h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white"> SORU BANKASI İLE ZAMAN VE MEKANDAN BAĞIMSIZ HAZIRLANIN </h3>
+                                            <a href="#" class="btn btn-sm c-btn-white c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">DAHA FAZLA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="c-content-tile-1 c-bg-blue-3">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="c-tile-content c-arrow-left c-arrow-blue-3 c-content-overlay">
+                                    <div class="c-overlay-wrapper">
+                                        <div class="c-overlay-content">
+                                            <a href="#">
+                                                <i class="icon-link"></i>
+                                            </a>
+                                            <a href="~/onyuz/assets/base/img/content/stock/stok_test1.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-4">
+                                                <i class="icon-magnifier"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-image c-overlay-object" data-height="height" style="background-image: url(/onyuz/assets/base/img/content/stock/stok_test1.jpg)"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="c-tile-content c-content-v-center" data-height="height">
+                                    <div class="c-wrapper">
+                                        <div class="c-body c-center">
+                                            <h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white"> GELECEĞİNİZİ SORU BANKASI İLE YÖNETİN </h3>
+                                            <p class="c-tile-body c-font-white">Planlarınızı şansa bırakmayın Soru Bankasını deneyin.</p>
+                                            <a href="#" class="btn btn-sm c-btn-white c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">DAHA FAZLA</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/TILES/TILE-3 -->
+    <!-- BEGIN: CONTENT/ISOTOPE/GALLERY-1 -->
+    <div class="c-content-box c-size-md c-bg-img-center" style="background-image: url(/onyuz/assets/base/img/content/backgrounds/bg-82.jpg)">
+        <div class="container">
+            <div class="c-content-title-1">
+                <h3 class="c-center c-font-uppercase c-font-bold c-font-white">SON HABERLER</h3>
+                <div class="c-line-center c-theme-bg"></div>
+            </div>
+            <div class="c-content-isotope-gallery c-opt-1">
+                <div class="c-content-isotope-item wow animate zoomIn" data-wow-delay="0">
+                    <div class="c-content-isotope-image-container">
+                        <img class="c-content-isotope-image" src="~/onyuz/assets/base/img/content/stock/13.jpg" />
+                        <div class="c-content-isotope-overlay c-ilightbox-image-1" href="~/onyuz/assets/base/img/content/stock/13.jpg" data-options="thumbnail:'/onyuz/assets/base/img/content/stock/13.jpg'" data-caption="<h4>The River</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nibh pharetra ligula rhoncus, nec iaculis nulla semper.</p>">
+                            <div class="c-content-isotope-overlay-icon">
+                                <i class="fa fa-plus c-font-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-content-isotope-item c-item-size-double wow animate zoomIn" data-wow-delay="0.1s">
+                    <div class="c-content-isotope-image-container">
+                        <img class="c-content-isotope-image" src="~/onyuz/assets/base/img/content/stock/stok_test4.jpg" />
+                        <div class="c-content-isotope-overlay c-ilightbox-image-1" href="~/onyuz/assets/base/img/content/stock/stok_test4.jpg" data-options="thumbnail:'/onyuz/assets/base/img/content/stock/81.jpg'" data-caption="<h4>Speedy City</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nibh pharetra ligula rhoncus, nec iaculis nulla semper.</p>">
+                            <div class="c-content-isotope-overlay-icon">
+                                <i class="fa fa-plus c-font-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-content-isotope-item">
+                    <div class="c-content-isotope-image-container wow animate zoomIn" data-wow-delay="0.2s">
+                        <img class="c-content-isotope-image" src="~/onyuz/assets/base/img/content/stock/stok_test5.jpg" />
+                        <div class="c-content-isotope-overlay c-ilightbox-image-1" href="~/onyuz/assets/base/img/content/stock/stok_test5.jpg" data-options="thumbnail:'/onyuz/assets/base/img/content/stock/63.jpg'" data-caption="<h4>The Workstation</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nibh pharetra ligula rhoncus, nec iaculis nulla semper.</p>">
+                            <div class="c-content-isotope-overlay-icon">
+                                <i class="fa fa-plus c-font-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-content-isotope-item">
+                    <div class="c-content-isotope-image-container wow animate zoomIn" data-wow-delay="0.3s">
+                        <img class="c-content-isotope-image" src="~/onyuz/assets/base/img/content/stock/48.jpg" />
+                        <div class="c-content-isotope-overlay c-ilightbox-image-1" href="~/onyuz/assets/base/img/content/stock/48.jpg" data-options="thumbnail:'/onyuz/assets/base/img/content/stock/48.jpg'" data-caption="<h4>Exploring the Ice</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nibh pharetra ligula rhoncus, nec iaculis nulla semper.</p>">
+                            <div class="c-content-isotope-overlay-icon">
+                                <i class="fa fa-plus c-font-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-content-isotope-item">
+                    <div class="c-content-isotope-image-container wow animate zoomIn" data-wow-delay="0.4s">
+                        <img class="c-content-isotope-image" src="~/onyuz/assets/base/img/content/stock/33.jpg" />
+                        <div class="c-content-isotope-overlay c-ilightbox-image-1" href="/onyuz/assets/base/img/content/stock/33.jpg" data-options="thumbnail:'/onyuz/assets/base/img/content/stock/33.jpg'" data-caption="<h4>Music is the way of life</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nibh pharetra ligula rhoncus, nec iaculis nulla semper.</p>">
+                            <div class="c-content-isotope-overlay-icon">
+                                <i class="fa fa-plus c-font-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-content-isotope-item c-item-size-double wow animate zoomIn" data-wow-delay="0.5s">
+                    <div class="c-content-isotope-image-container">
+                        <img class="c-content-isotope-image" src="onyuz/assets/base/img/content/stock4/stok4_test1.jpg" />
+                        <div class="c-content-isotope-overlay c-ilightbox-image-1" href="/onyuz/assets/base/img/content/stock/stok_test6.jpg" data-options="thumbnail:'/onyuz/assets/base/img/content/stock4/36.jpg'" data-caption="<h4>Reflection</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nibh pharetra ligula rhoncus, nec iaculis nulla semper.</p>">
+                            <div class="c-content-isotope-overlay-icon">
+                                <i class="fa fa-plus c-font-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/ISOTOPE/GALLERY-1 -->
+    <!-- BEGIN: CONTENT/TABS/TAB-1 -->
+    <div class="c-content-box c-size-md c-no-bottom-padding c-overflow-hide">
+        <div class="c-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="c-content-title-1">
+                        <h3 class="c-font-34 c-font-center c-font-bold c-font-uppercase c-margin-b-30"> SORU BANKASININ TEMEL HİZMETLERİ </h3>
+                        <div class="c-line-center c-theme-bg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="c-content-tab-2 c-theme c-opt-1">
+                        <ul class="nav c-tab-icon-stack c-font-sbold c-font-uppercase">
+                            <li class="active">
+                                <a href="#c-tab2-opt1-1" data-toggle="tab">
+                                    <span class="c-content-line-icon c-icon-25"></span>
+                                    <span class="c-title">SORU BANKASI</span>
+                                </a>
+                                <div class="c-arrow"></div>
+                            </li>
+                            <li>
+                                <a href="#c-tab2-opt1-2" data-toggle="tab">
+                                    <span class="c-content-line-icon c-icon-19"></span>
+                                    <span class="c-title">GÜNCEL KİTAPÇIKLAR</span>
+                                </a>
+                                <div class="c-arrow"></div>
+                            </li>
+                            <li>
+                                <a href="#c-tab2-opt1-3" data-toggle="tab">
+                                    <span class="c-content-line-icon c-icon-14"></span>
+                                    <span class="c-title">SON MEVZUATA UYGUN</span>
+                                </a>
+                                <div class="c-arrow"></div>
+                            </li>
+                            <li>
+                                <a href="#c-tab2-opt1-4" data-toggle="tab">
+                                    <span class="c-content-line-icon c-icon-20"></span>
+                                    <span class="c-title">ESNEK FAYDALANMA SEÇENEKLERİ</span>
+                                </a>
+                                <div class="c-arrow"></div>
+                            </li>
+                            <li>
+                                <a href="#c-tab2-opt1-5" data-toggle="tab">
+                                    <span class="c-content-line-icon c-icon-33"></span>
+                                    <span class="c-title">DESTEK</span>
+                                </a>
+                                <div class="c-arrow"></div>
+                            </li>
+                        </ul>
+                        <div class="c-tab-content">
+                            <div class="c-bg-img-center1" style="background-image: url(/onyuz/assets/base/img/content/backgrounds/bg-62.jpg)">
+                                <div class="container">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade in active" id="c-tab2-opt1-1">
+                                            <div class="c-tab-pane">
+                                                <img class="img-responsive" src="~/onyuz/assets/base/img/content/stock2/stok2_test2.jpg" alt="" />
+                                                <h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">SORU BANKASI</h4>
+                                                <p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin "> Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası. </p>
+                                                <button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold"> DETAYLAR </button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="c-tab2-opt1-2">
+                                            <div class="c-tab-pane">
+                                                <img class="img-responsive" src="~/onyuz/assets/base/img/content/stock2/04.jpg" alt="" />
+                                                <h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">SORU BANKASI</h4>
+                                                <p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin ">
+                                                    Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası
+                                                    Soru bankası Soru bankası Soru bankası Soru bankası.
+                                                </p>
+                                                <button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold">
+                                                    DETAYLAR
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="c-tab2-opt1-3">
+                                            <div class="c-tab-pane">
+                                                <img class="img-responsive" src="~/onyuz/assets/base/img/content/stock2/stok2_test4.jpg" alt="" />
+                                                <h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">SORU BANKASI</h4>
+                                                <p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin "> Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankasıSoru bankası Soru bankası. </p>
+                                                <button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold">
+                                                    DETAYLAR
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="c-tab2-opt1-4">
+                                            <div class="c-tab-pane">
+                                                <img class="img-responsive" src="~/onyuz/assets/base/img/content/stock2/stok2_test3.jpg" alt="" />
+                                                <h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">SORU BANKASI</h4>
+                                                <p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin "> Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası. </p>
+                                                <button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold"> DETAYLAR </button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="c-tab2-opt1-5">
+                                            <div class="c-tab-pane">
+                                                <img class="img-responsive" src="~/onyuz/assets/base/img/content/stock2/stok2_test5.jpg" alt="" />
+                                                <h4 class="c-font-30 c-font-thin c-font-uppercase c-font-bold">SORU BANKASI</h4>
+                                                <p class="c-font-17 c-margin-b-20 c-margin-t-20 c-font-thin "> Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası Soru bankası. </p>
+                                                <button class="btn btn-sm c-theme-btn c-btn-square c-btn-bold"> DETAYLAR </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/TABS/TAB-1 -->
+    <!-- BEGIN: CONTENT/FEATURES/FEATURES-11 -->
+    <div class="c-content-box c-size-md c-bg-parallax" style="background-image: url(/onyuz/assets/base/img/content/backgrounds/bg_test3.jpg)">
+        <div class="container">
+            <div class="c-content-feature-8 c-opt-1">
+                <ul class="c-grid">
+                    <li>
+                        <div class="c-card c-font-right c-bg-opacity-1">
+                            <h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">
+                                SINAVLARINIZI
+                                <br />KENDİNİZ OLUŞTURUN
+                            </h3>
+                            <p class="c-font-white c-font-18"> Soru ankası Soru ankası Soru ankası Soru ankası Soru ankası Soru ankası </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-card c-bg-opacity-1">
+                            <h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">
+                                SINAV HABERCİMİZİ
+                                <br />KULLANIN
+                            </h3>
+                            <p class="c-font-white c-font-18"> Soru ankası Soru ankası Soru ankası Soru ankası Soru ankası Soru ankası Soru ankası </p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="c-grid">
+                    <li>
+                        <div class="c-card c-font-right c-bg-opacity-1">
+                            <h3 class="c-font-40 c-font-white c-font-bold c-font-uppercase">
+                                CEVAPLARINIZIN DAYANAK
+                                <br />NOKTALARINA KOLAY ULAŞIN
+                            </h3>
+                            <p class="c-font-white c-font-18"> Soru ankası Soru ankası Soru ankası Soru ankası Soru ankası Soru ankası Soru ankası </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="c-card c-img c-bg-img-center" style="background-image: url(/onyuz/assets/base/img/content/stock3/6.jpg)">
+                            <h3 class="c-font-white c-font-50 c-font-center">&nbsp;</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/FEATURES/FEATURES-11 -->
+    <!-- BEGIN: CONTENT/FEATURES/FEATURES-9 -->
+    <div class="c-content-box c-size-md c-bg-parallax" style="background-image: url(/onyuz/assets/base/img/content/backgrounds/bg-87.jpg)">
+        <div class="container">
+            <div class="c-content-feature-9">
+                <!-- Begin: Title 1 component -->
+                <div class="c-content-title-1">
+                    <h3 class="c-font-uppercase c-center c-font-bold">NELER YAPABİLİRİZ</h3>
+                    <div class="c-line-center c-theme-bg"></div>
+                    <p class="c-font-center">BİZE GÜVENİN VE BİRLİKTE BAŞARALIM</p>
+                </div>
+                <!-- End-->
+                <ul class="c-list">
+                    <li class="wow animate fadeInUp">
+                        <div class="c-card">
+                            <i class="icon-rocket c-font-blue-1-5 c-font-22 c-bg-white c-float-left"></i>
+                            <div class="c-content c-content-left">
+                                <h3 class="c-theme-font c-font-uppercase c-font-bold">SORULAR VE DETAYLI CEVAPLAR</h3>
+                                <p>  Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wow animate fadeInUp">
+                        <div class="c-card">
+                            <i class="icon-user c-font-blue-1-5 c-font-27 c-bg-white c-float-left"></i>
+                            <div class="c-content c-content-left">
+                                <h3 class="c-theme-font c-font-uppercase c-font-bold">KONU GRUPLARI SORU VE CEVAPLARI</h3>
+                                <p> Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wow animate fadeInUp">
+                        <div class="c-card">
+                            <i class="icon-basket c-font-blue-1-5 c-font-27 c-bg-white c-float-left"></i>
+                            <div class="c-content c-content-left">
+                                <h3 class="c-theme-font c-font-uppercase c-font-bold">MEVZUATA UYGUNLUK</h3>
+                                <p> Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="c-list">
+                    <li class="wow animate fadeInUp">
+                        <div class="c-card">
+                            <i class="icon-bulb c-font-blue-1-5 c-font-22 c-bg-white c-float-left"></i>
+                            <div class="c-content c-content-left">
+                                <h3 class="c-theme-font c-font-uppercase c-font-bold">SORULARA KOLAY ULAŞIM</h3>
+                                <p> Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wow animate fadeInUp">
+                        <div class="c-card">
+                            <i class="icon-pie-chart c-font-blue-1-5 c-font-27 c-bg-white c-float-left"></i>
+                            <div class="c-content c-content-left">
+                                <h3 class="c-theme-font c-font-uppercase c-font-bold">SORU YANLIŞLARINI DÜZENLEME</h3>
+                                <p> Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wow animate fadeInUp">
+                        <div class="c-card">
+                            <i class="icon-trophy c-font-blue-1-5 c-font-27 c-bg-white c-float-left"></i>
+                            <div class="c-content c-content-left">
+                                <h3 class="c-theme-font c-font-uppercase c-font-bold">ONLİNE DESTEK</h3>
+                                <p> Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası Soru Bankası</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/FEATURES/FEATURES-9 -->
+    <!-- BEGIN: CONTENT/BARS/BAR-5 -->
+    <div class="c-content-box c-size-md c-bg-parallax" style="background-image: url(/onyuz/assets/base/img/content/backgrounds/bg_test4.jpg)">
+        <div class="container">
+            <div class="c-content-bar-4">
+                <h3 class="c-font-uppercase c-font-bold">
+                    SORU BANKASI
+                    <br />BENZERSİZ ÖZELLİK VE İMKANLARIYLA HİZMETİNİZDE
+                </h3>
+                <div class="c-actions">
+                    <a href="#" class="btn btn-md c-btn-border-2x c-btn-square c-btn-white c-btn-uppercase c-btn-bold c-margin-b-100">DAHA FAZLA BİLGİ</a>
+                    <a href="#" class="btn btn-md c-theme-btn c-btn-square c-btn-uppercase c-btn-bold c-theme-btn c-margin-b-100 hide">SATIN AL</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/BARS/BAR-5 -->
+    <!-- BEGIN: CONTENT/MISC/SUBSCRIBE-FORM-1 -->
+    <div class="c-content-box c-size-sm c-bg-dark">
+        <div class="container">
+            <div class="c-content-subscribe-form-1">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h3 class="c-title c-font-30 c-font-uppercase c-font-bold">E-Posta LİSTEMİZE KAYDOLUN</h3>
+                        <div class="c-body c-font-16 c-font-uppercase c-font-sbold">E-posta listemize kaydolaak güncel kalın</div>
+                    </div>
+                    <div class="col-sm-6">
+                        <form action="#">
+                            <div class="input-group input-group-lg">
+                                <input type="text" class="form-control input-lg" placeholder="E-posta">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn c-theme-btn c-btn-uppercase btn-lg c-btn-bold c-btn-square">KAYDOL</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/MISC/SUBSCRIBE-FORM-1 -->
+    <!-- BEGIN: CONTENT/TESTIMONIALS/TESTIMONIALS-6-1 -->
+    <div class="c-content-box c-size-md c-bg-grey-1">
+        <div class="container">
+            <div class="c-content-blog-post-card-1-slider" data-slider="owl" data-items="3" data-auto-play="8000">
+                <div class="c-content-title-1">
+                    <h3 class="c-center c-font-uppercase c-font-bold">Kullanıcı GÖRÜŞLERİ</h3>
+                    <div class="c-line-center c-theme-bg"></div>
+                    <p class="c-center c-font-uppercase1">Görüşleriniz bizim için önemlidir...</p>
+                </div>
+                <div class="owl-carousel owl-theme c-theme">
+                    <div class="item">
+                        <div class="c-content-testimonial-3 c-option-default">
+                            <div class="c-content"> İndirimli soru kitapçıkları sayesinde her zaman en uygun koşullarda soru erişimim sağlanıyor. </div>
+                            <div class="c-person">
+                                <img src="~/onyuz/assets/base/img/content/avatars/team1.jpg" class="img-responsive">
+                                <div class="c-person-detail c-font-uppercase">
+                                    <h4 class="c-name">Çağatay Gökçe</h4>
+                                    <p class="c-position c-font-bold c-theme-font">Uzman, Maliye</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="c-content-testimonial-3 c-option-default">
+                            <div class="c-content"> Sınavlara özel kampanyalar sayesinde gereksiz soru ve detaydan kurtuluyoruz. </div>
+                            <div class="c-person">
+                                <img src="~/onyuz/assets/base/img/content/avatars/team6.jpg" class="img-responsive">
+                                <div class="c-person-detail c-font-uppercase">
+                                    <h4 class="c-name">Funda Kaplan</h4>
+                                    <p class="c-position c-font-bold c-theme-font">Uzman, Maliye</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="c-content-testimonial-3 c-option-default">
+                            <div class="c-content"> Eğitim danışmanlığı hizmetleriyle nereden başlamanız gerektiğine Soru Bankası karar veriyor. </div>
+                            <div class="c-person">
+                                <img src="~/onyuz/assets/base/img/content/avatars/team4.jpg" class="img-responsive">
+                                <div class="c-person-detail c-font-uppercase">
+                                    <h4 class="c-name">Zeynep Sungur</h4>
+                                    <p class="c-position c-font-bold c-theme-font">Uzman, Maliye</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="c-content-testimonial-3 c-option-default">
+                            <div class="c-content"> Mobil uygulamalarıyla her türlü cihazdan 24 saat erişim imkanı kolaylık sağlıyor. </div>
+                            <div class="c-person">
+                                <img src="~/onyuz/assets/base/img/content/avatars/team8.jpg" class="img-responsive">
+                                <div class="c-person-detail c-font-uppercase">
+                                    <h4 class="c-name">Ayşe Deniz</h4>
+                                    <p class="c-position c-font-bold c-theme-font">Uzman, Maliye</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="c-content-testimonial-3 c-option-default">
+                            <div class="c-content"> Sorular ve dayanakları soru çözerken öğrenmenizi sağlıyorlar. </div>
+                            <div class="c-person">
+                                <img src="~/onyuz/assets/base/img/content/avatars/team7.jpg" class="img-responsive">
+                                <div class="c-person-detail c-font-uppercase">
+                                    <h4 class="c-name">Mark Jeep</h4>
+                                    <p class="c-position c-font-bold c-theme-font">Uzman, Maliye</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/TESTIMONIALS/TESTIMONIALS-6-1 -->
+    <!-- BEGIN: CONTENT/MISC/LATEST-ITEMS-1 -->
+    <div class="c-content-box c-size-md c-bg-grey-1">
+        <div class="container">
+            <div class="row" data-auto-height="true">
+                <div class="col-md-4 c-margin-b-30 wow animate fadeInDown">
+                    <div class="imagecontour effect2">
+                        <img class="img-responsive" src="~/onyuz/assets/base/img/content/stock3/stok3_test3.jpg" alt="service" />
+                    </div>
+                    <!--
+                    <div class="c-content-media-1" data-height="height">
+                        <div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Blog</div>
+                        <a href="#" class="c-title c-font-uppercase c-font-bold c-theme-on-hover">Take the web by storm with JANGO</a>
+                        <p>Lorem ipsum dolor sit amet, coectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat</p>
+                        <div class="c-author">
+                            <div class="c-portrait" style="background-image: url(assets/base/img/content/team/team1.jpg)"></div>
+                            <div class="c-name c-font-uppercase">Jack Nilson</div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="col-md-4 c-margin-b-30 wow animate fadeInDown" data-wow-delay="0.2s">
+                    <div class="c-content-media-1" data-height="height">
+                        <div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Haberler</div>
+                        <a href="#" class="c-title c-font-uppercase c-font-bold c-theme-on-hover">SINAVLARA ÖZEL KAMPANYALAR</a>
+                        <p>Sınavlara ve dönemlere özel kampanyalarımızdan faydalanın </p>
+                        <div class="c-date"> 16 Haz 2017 </div>
+                    </div>
+                </div>
+                <div class="col-md-4 c-margin-b-30 wow animate fadeInDown" data-wow-delay="0.4s">
+                    <div class="c-content-media-1 c-content-v-center c-theme-bg" data-height="height">
+                        <div class="c-wrapper">
+                            <div class="c-body c-center">
+                                <h3 class="c-font-25 c-line-height-34 c-font-white c-font-uppercase c-font-bold"> SİSTEMATİK EĞİTİM, GELİŞİMİNİZİ İZLEME İMKANI</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 wow animate fadeInLeft">
+                    <div class="c-content-media-2-slider" data-slider="owl" data-single-item="true" data-auto-play="4000">
+                        <div class="c-content-label c-font-uppercase c-font-bold">GÜNCEL DEĞERLENDİRMELER</div>
+                        <div class="owl-carousel owl-theme c-theme owl-single">
+                            <div class="item">
+                                <div class="c-content-media-2 c-bg-img-center" style="background-image: url(/onyuz/assets/base/img/content/stock3/stok3_test3.jpg); min-height: 360px;">
+                                    <div class="c-panel">
+                                        <div class="c-fav">
+                                            <i class="icon-heart c-font-thin"></i>
+                                            <p class="c-font-thin">16</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="c-content-media-2 c-bg-img-center" style="background-image: url(/onyuz/assets/base/img/content/stock3/stok3_test4.jpg); min-height: 360px;">
+                                    <div class="c-panel">
+                                        <div class="c-fav">
+                                            <i class="icon-heart c-font-thin"></i>
+                                            <p class="c-font-thin">24</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="c-content-media-2 c-bg-img-center" style="background-image: url(/onyuz/assets/base/img/content/stock3/32.jpg); min-height: 360px;">
+                                    <div class="c-panel">
+                                        <div class="c-fav">
+                                            <i class="icon-heart c-font-thin"></i>
+                                            <p class="c-font-thin">19</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow animate fadeInRight">
+                    <div class="c-content-testimonial-2-slider" data-slider="owl" data-single-item="true" data-auto-play="6000">
+                        <div class="c-title c-font-uppercase c-theme-bg">YORUMLAR</div>
+                        <div class="owl-carousel owl-theme c-theme owl-single">
+                            <div class="item">
+                                <div class="c-content-testimonial-2" style="min-height: 360px;">
+                                    <div class="c-testimonial c-font-bold c-font-uppercase">Danışmanlık hizmetleriniz bir harika!</div>
+                                    <div class="c-author">
+                                        <div class="c-portrait" style="background-image: url(/onyuz/assets/base/img/content/team/team13.jpg)"></div>
+                                        <div class="c-name c-font-uppercase">Ahmet Tekli</div>
+                                        <p class="c-position c-theme c-font-uppercase">Uzman, Maliye</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="c-content-testimonial-2" style="min-height: 360px;">
+                                    <div class="c-testimonial c-font-bold c-font-uppercase">Yapıcı ve esnek soru yapılarıyla çözerken öğreniyorum</div>
+                                    <div class="c-author">
+                                        <div class="c-portrait" style="background-image: url(/onyuz/assets/base/img/content/team/team6.jpg)"></div>
+                                        <div class="c-name c-font-uppercase">Olcay Tan</div>
+                                        <p class="c-position c-theme c-font-uppercase">Uzman, Maliye</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/MISC/LATEST-ITEMS-1 -->
+    <!-- BEGIN: CONTENT/PRODUCTS/PRODUCT-1 -->
+    <div class="c-content-box c-size-md c-bg-white c-no-bottom-padding">
+        <div class="container">
+            <div class="c-content-product-1 c-opt-1">
+                <div class="c-content-title-1">
+                    <h3 class="c-center c-font-uppercase c-font-bold">SORU BANKASI HAKKINDA DAHA FAZLA BİLGİ</h3>
+                    <div class="c-line-center"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 wow animate slideInUp">
+                        <div class="c-media">
+                            <img src="onyuz/assets/base/img/content/misc/jango-intro-3-test.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="c-body">
+                            <ul class="c-row">
+                                <li class="wow animate fadeInUp">
+                                    <h4>MOBIL UYGULAMALARIMIZ</h4>
+                                    <p>Mobil, Masaüstü her türlü cihazdan erişim olanağı</p>
+                                </li>
+                                <li class="wow animate fadeInUp">
+                                    <h4>MOBIL UYGULAMALARIMIZA RİŞİM</h4>
+                                    <p>Mobil, Masaüstü her türlü cihazdan erişim olanağı</p>
+                                </li>
+                            </ul>
+                            <ul class="c-row">
+                                <li class="wow animate fadeInUp">
+                                    <h4>MOBIL UYGULAMALARIMIZDA AMAÇLADIKLARIMIZ</h4>
+                                    <p>Mobil, Masaüstü her türlü cihazdan erişim olanağı</p>
+                                </li>
+                                <li class="wow animate fadeInUp">
+                                    <h4>MOBIL UYGULAMALARIMIZA KATKIDA BULUNUN</h4>
+                                    <p>Mobil, Masaüstü her türlü cihazdan erişim olanağı</p>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-md c-btn-border-2x c-btn-square c-btn-regular c-btn-uppercase c-btn-bold c-margin-b-100">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/PRODUCTS/PRODUCT-1 -->
+    <!-- BEGIN: CONTENT/PRICING/PRICING-1 -->
+    <div class="c-content-box c-size-md c-bg-grey-1">
+        <div class="container">
+            <div class="c-content-pricing-1">
+                <div class="c-content-title-1">
+                    <h3 class="c-center c-font-uppercase c-font-bold">SİZE UYGUN ÇÖZÜMÜ SEÇİN</h3>
+                    <div class="c-line-center"></div>
+                </div>
+                <div class="c-tile-container">
+                    <div class="c-tile c-tile-small wow animate fadeInLeft">
+                        <div class="c-label c-theme-bg">Standart</div>
+                        <p class="c-price">
+                            59
+                            <sup>YTL</sup>
+                        </p>
+                        <p class="c-font-uppercase">1000 Soru</p>
+                        <p class="c-font-uppercase">LİMİTSİZ Kullanım</p>
+                        <p class="c-font-uppercase">LİMİTSİZ test</p>
+                        <p class="c-font-uppercase">Sadec 7 gün İÇİN</p>
+                        <a href="#" class="btn btn-md c-btn-square c-btn-border-2x c-btn-regular c-btn-uppercase c-btn-bold">SATIN AL</a>
+                    </div>
+                    <div class="c-tile wow animate fadeInUp">
+                        <div class="c-label c-theme-bg">İŞ PAKETİ</div>
+                        <p class="c-price">
+                            99
+                            <sup>YTL</sup>
+                        </p>
+                        <p class="c-font-uppercase">10,000 SORU</p>
+                        <p class="c-font-uppercase">LİMİTSİZ Kullanım</p>
+                        <p class="c-font-uppercase">LİMİTSİZ test</p>
+                        <p class="c-font-uppercase">Sadec 30 gün İÇİN</p>
+                        <button type="button" class="btn btn-md c-btn-square c-btn-border-2x c-btn-regular c-btn-uppercase c-btn-bold">SATIN AL</button>
+                    </div>
+                    <div class="c-tile c-tile-small wow animate fadeInRight">
+                        <div class="c-label c-theme-bg">Eksper</div>
+                        <p class="c-price">
+                            199
+                            <sup>YTL</sup>
+                        </p>
+                        <p class="c-font-uppercase">SINIRSIZ SORU</p>
+                        <p class="c-font-uppercase">LİMİTSİZ Kullanım</p>
+                        <p class="c-font-uppercase">LİMİTSİZ test</p>
+                        <p class="c-font-uppercase">1 YIL İÇİN</p>
+                        <button type="button" class="btn btn-md c-btn-square c-btn-border-2x c-btn-regular c-btn-uppercase c-btn-bold">SATIN AL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: CONTENT/PRICING/PRICING-1 -->
+    <!-- BEGIN: CONTENT/SLIDERS/CLIENT-LOGOS-2 -->
+    <div class="c-content-box c-size-md c-bg-white">
+        <div class="container">
+            <!-- Begin: Testimonals 1 component -->
+            <div class="c-content-client-logos-slider-1  c-bordered" data-slider="owl" data-items="6" data-desktop-items="4" data-desktop-small-items="3" data-tablet-items="3" data-mobile-small-items="2" data-auto-play="5000">
+                <!-- Begin: Title 1 component -->
+                <div class="c-content-title-1">
+                    <h3 class="c-center c-font-uppercase c-font-bold">ÇÖZÜM ORTAKLARIMIZ</h3>
+                    <div class="c-line-center c-theme-bg"></div>
+                </div>
+                <!-- End-->
+                <!-- Begin: Owlcarousel -->
+                <div class="owl-carousel owl-theme c-theme owl-bordered1">
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client1.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client2.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client3.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client4.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client5.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client6.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client5.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client6.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client5.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client6.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client5.jpg" alt="" />
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/onyuz/assets/base/img/content/client-logos/client6.jpg" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <!-- End-->
+            </div>
+            <!-- End-->
+        </div>
+    </div>
+    <!-- END: CONTENT/SLIDERS/CLIENT-LOGOS-2 -->
+    <!-- END: PAGE CONTENT -->
+</div>
+<!-- END: PAGE CONTAINER -->
+<!-- BEGIN: LAYOUT/FOOTERS/FOOTER-6 -->
+<a name="footer"></a>
+<footer class="c-layout-footer c-layout-footer-6 c-bg-grey-1">
+    <div class="container">
+        <div class="c-prefooter c-bg-white">
+            <div class="c-head">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="c-left">
+                            <div class="socicon">
+                                <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-facebook tooltips" data-original-title="Facebook" data-container="body"></a>
+                                <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-twitter tooltips" data-original-title="Twitter" data-container="body"></a>
+                                <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-youtube tooltips" data-original-title="Youtube" data-container="body"></a>
+                                <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-tumblr tooltips" data-original-title="Tumblr" data-container="body"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="c-right">
+                            <h3 class="c-title c-font-uppercase c-font-bold">Mobİl Uygulamamızı İndİrİn</h3>
+                            <div class="c-icons">
+                                <a href="#" class="c-font-30 c-font-green-1 socicon-btn c-bg-grey-1-hover socicon-android tooltips" data-original-title="Android" data-container="body"></a>
+                                <a href="#" class="c-font-30 c-font-grey-3 socicon-btn c-bg-grey-1-hover socicon-apple tooltips" data-original-title="Apple" data-container="body"></a>
+                                <a href="#" class="c-font-30 c-font-blue-3 socicon-btn c-bg-grey-1-hover socicon-windows tooltips" data-original-title="Windows" data-container="body"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="c-line"></div>
+            <div class="c-body">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <ul class="c-links c-theme-ul">
+                            <li>
+                                <a href="#">Soru Bankası Hakkında</a>
+                            </li>
+                            <li>
+                                <a href="#">Gizlilik Şartları</a>
+                            </li>
+                            <li>
+                                <a href="#">Üyelik Sözleşmesi</a>
+                            </li>
+                            <li>
+                                <a href="#">Promosyonlar</a>
+                            </li>
+                            <li>
+                                <a href="#">Haberler</a>
+                            </li>
+                            <li>
+                                <a href="#">Son Baskılar</a>
+                            </li>
+                        </ul>
+                        <ul class="c-links c-theme-ul">
+                            <li>
+                                <a href="#">Blok</a>
+                            </li>
+                            <li>
+                                <a href="#">Projeler</a>
+                            </li>
+                            <li>
+                                <a href="#">Çözüm Ortakları</a>
+                            </li>
+                            <li>
+                                <a href="#">Hizmetlerimiz</a>
+                            </li>
+                            <li>
+                                <a href="#">Özelliklerimiz</a>
+                            </li>
+                            <li>
+                                <a href="#">İstatistikler</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-12">
+                        <div class="c-content-title-1 c-title-md">
+                            <h3 class="c-title c-font-uppercase c-font-bold">Son Haberler</h3>
+                            <div class="c-line-left hide"></div>
+                        </div>
+                        <div class="c-twitter">
+                            <a class="twitter-timeline" href="#" data-widget-id="626329365547061249" data-tweet-limit="2" data-chrome="noheader nofooter noscrollbar noborders transparent">Loading tweets by ...</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12">
+                        <div class="c-content-title-1 c-title-md">
+                            <h3 class="c-title c-font-uppercase c-font-bold">Bizimle İletİşİme geçİn</h3>
+                            <div class="c-line-left hide"></div>
+                        </div>
+                        <p class="c-address c-font-16">
+                            Mrş. Fevzi Çakmak Cad. Soru Sok.33/5
+                            <br /> Ankara, Türkiye
+                            <br /> Phone: +90 312 434 34 34
+                            <br /> Fax: +90 312 433 33 33
+                            <br /> Email:
+                            <a href="mailto:info@sorubankasi.com">
+                                <span class="c-theme-color">info@sorubankasi.com</span>
+                            </a>
+                            <br /> Skype:
+                            <a href="#">
+                                <span class="c-theme-color">sorubankasi</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="c-line"></div>
+            <div class="c-foot">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="c-content-title-1 c-title-md">
+                            <h3 class="c-font-uppercase c-font-bold">
+                                Soru Bankası
+                                <span class="c-theme-font">Hakkında</span>
+                            </h3>
+                            <div class="c-line-left hide"></div>
+                        </div>
+                        <p class="c-text c-font-16 c-font-regular">Konu analizi sayfaları ile tüm SoruTiplerini gözden geçirebilir, konu içerisindeki ilerlemeni takip edebilirsin.</p>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="c-content-title-1 c-title-md">
+                            <h3 class="c-font-uppercase c-font-bold">E-Posta Grubuna Üye Olun</h3>
+                            <div class="c-line-left hide"></div>
+                        </div>
+                        <div class="c-line-left hide"></div>
+                        <form action="#">
+                            <div class="input-group input-group-lg c-square">
+                                <input type="text" class="form-control c-square c-font-grey-3 c-border-grey c-theme" placeholder="E-Posta yazınız" />
+                                <span class="input-group-btn">
+                                    <button class="btn c-theme-btn c-theme-border c-btn-square c-btn-uppercase c-font-16" type="button">Üye Ol</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="c-postfooter c-bg-dark-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 c-col">
+                    <p class="c-copyright c-font-grey">
+                        2017 &copy; Soru Bankası
+                        <span class="c-font-grey-3">Tüm Hakları Saklıdır.</span>
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-12 c-col">
+                    <ul class="list-unstyled list-inline pull-right">
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/1.png" width="60" />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/2.png" width="60" />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/22.png" width="60" />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/5.png" width="60" />
+                        </li>
+                        <li>
+                            <img class="img-responsive" src="~/onyuz/assets/base/img/content/payments/light/6.png" width="60" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END: LAYOUT/FOOTERS/FOOTER-6 -->
+<!-- BEGIN: LAYOUT/FOOTERS/GO2TOP -->
+<div class="c-layout-go2top">
+    <i class="icon-arrow-up"></i>
+</div>
+<!-- END: LAYOUT/FOOTERS/GO2TOP -->
