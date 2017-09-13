@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using TBSF.MVCWebUi.Entities;
 using TBSF.MVCWebUi.Models;
@@ -31,7 +32,7 @@ namespace TBSF.MVCWebUi.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterViewModel registerViewModel)
+        public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -61,7 +62,8 @@ namespace TBSF.MVCWebUi.Controllers
                         };
                         //return View(registerViewModel);
                     }
-
+                    // await roleManager.AddClaimAsync(adminRole, new Claim(CustomClaimTypes.Permission, "projects.view"));
+                    await _userManager.AddClaimAsync(user, new Claim("claimtip", user.Email));
                     _userManager.AddToRoleAsync(user, "Admin").Wait();
                     return RedirectToAction("Index", "Home");
                 }
@@ -80,6 +82,15 @@ namespace TBSF.MVCWebUi.Controllers
         {
             if(ModelState.IsValid)
             {
+                
+                /*var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, loginViewModel.Email)
+                };*/
+
+                /*var userIdentity = new ClaimsIdentity(claims, "login");
+                ClaimsPrincipal principal = new ClaimsPrincipal(userIdentity);*/
+
                 var result = _signInManager.PasswordSignInAsync(loginViewModel.Email,
                                                                 loginViewModel.Password,
                                                                 loginViewModel.RememberMe,
@@ -87,19 +98,30 @@ namespace TBSF.MVCWebUi.Controllers
 
                 if(result.Succeeded)
                 {
-                    return RedirectToAction("Home", "Index");
+                    //System.Security.Claims.ClaimsPrincipal currentUser = this.User;
+                    //_signInManager.CreateUserPrincipalAsync()
+                    //var currentUser = await _userManager.GetUserAsync(HttpContext.User);
+                    /*CustomIdentityUser user = new CustomIdentityUser
+                    {
+                        UserName = loginViewModel.Email,
+                        Email = loginViewModel.Email
+                    };*/
+                    //await _userManager.AddClaimAsync(user, new Claim("claimtip", "deneme login test"));
+                    return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", "Invalid login!");
             }
             return View(loginViewModel);
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult LogOff()
+        [HttpGet]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> LogOff()
         {
-            _signInManager.SignOutAsync().Wait();
+            await _signInManager.SignOutAsync();
+            //return RedirectToAction(nameof(HomeController.Index), "Home");
             return RedirectToAction("Login");
+            //return RedirectToAction("Index");
 
         }
     }
