@@ -17,7 +17,7 @@ namespace TBSF.MVCWebUi.Middlewares
             var options = new StaticFileOptions();
             options.RequestPath = "/node_modules";
             options.FileProvider = provider;
-
+            
             app.UseStaticFiles(options);
             return app;
         }
